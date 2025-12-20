@@ -83,5 +83,10 @@ ax2.legend()  # Add legend
 # Adjust layout to prevent overlap
 fig.tight_layout()
 
-plt.savefig("training_plots_separated_styled.png")
-print("Graphs generated successfully.")
+# --- Save the plot ---
+figs_dir = os.path.join(os.path.dirname(__file__), "figs")
+os.makedirs(figs_dir, exist_ok=True)
+save_path = os.path.join(figs_dir, "training_fig.png")
+
+plt.savefig(save_path)
+print(f"Graphs generated successfully and saved to {save_path}")
